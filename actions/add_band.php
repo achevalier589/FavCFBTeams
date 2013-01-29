@@ -16,6 +16,11 @@ if( $_POST['band_name'] != '' &&
 	// (3) Close the file
 	fclose($f);
 	
+	$_SESSION['message'] = array(
+			'text' => 'Your band has been added.',
+			'type' => 'success'
+	);
+	
 	// Redirect to list of bands
 	header('Location:../?p=list_bands');
 
@@ -24,7 +29,10 @@ if( $_POST['band_name'] != '' &&
 	$_SESSION['POST'] = $_POST;
 	
 	// Store error message in session data
-	$_SESSION['message'] = 'Please enter all required information' ;
+	$_SESSION['message'] = array(
+			'text' => 'Your band has been added.',
+			'type' => 'success'
+	);
 	
 	// Redirect to the form
 	header('Location:../?p=form_add_bands');
