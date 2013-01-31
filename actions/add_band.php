@@ -10,8 +10,8 @@ if( $_POST['band_name'] != '' &&
 	// (1) Open the file for writing
 	$f = fopen('../data/bands.csv','a');
 	
-	// (2) Write the new ban's info to the file
-	fwrite($f,"\n{$_POST['band_name']},{$_POST['band_genre']},{$_POST['band_numalbums']}");
+	// (2) Write the new band's info to the file
+	fwrite($f,"\n{$_POST['team_name']},{$_POST['team_record']},{$_POST['team_ranking']}");
 	
 	// (3) Close the file
 	fclose($f);
