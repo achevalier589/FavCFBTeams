@@ -1,21 +1,21 @@
-<h2>Add a Band</h2>
-<form class="form-horizontal" action="actions/add_band.php" method="post">
+<h2>Add a Team</h2>
+<form class="form-horizontal" action="actions/add_team.php" method="post">
 	<div class="control-group">
-		<label class="control-label" for="band_name">Band Name</label>
+		<label class="control-label" for="team_name">Team Name</label>
 		<div class="controls">
-			<?php echo input('band_name','required') ?>
+			<?php echo input('team_name','required') ?>
 		</div>
 	</div>
 	<div class="control-group">
-		<label class="control-label" for="band_genre">Genre</label>
+		<label class="control-label" for="team_record">Record</label>
 		<div class="controls">
-			<?php echo input('band_genre','required') ?>
+			<?php echo input('team_record','required') ?>
 		</div>
 	</div>
 	<div class="control-group">
-		<label class="control-label" for="band_numalbums"># Albums</label>
+		<label class="control-label" for="team_ranking">Ranking</label>
 		<div class="controls">
-			<?php echo input('band_numalbums','required') ?>
+			<?php echo input('team_ranking','required') ?>
 		</div>
 		<div class="form-actions">
 		  <button type="submit" class="btn btn-primary">Add to List</button>

@@ -2,13 +2,13 @@
 <pre><?php print_r($_POST) ?></pre>
 <?php
 // validate that each piece of info was provided
-if( $_POST['band_name'] != '' && 
-	$_POST['band_genre'] != '' &&
-	$_POST['band_numalbums'] != '') {
+if( $_POST['team_name'] != '' && 
+	$_POST['team_record'] != '' &&
+	$_POST['team_ranking'] != '') {
 	
 	// Add this band to the CSV file
 	// (1) Open the file for writing
-	$f = fopen('../data/bands.csv','a');
+	$f = fopen('../data/teams.csv','a');
 	
 	// (2) Write the new band's info to the file
 	fwrite($f,"\n{$_POST['team_name']},{$_POST['team_record']},{$_POST['team_ranking']}");
@@ -17,12 +17,12 @@ if( $_POST['band_name'] != '' &&
 	fclose($f);
 	
 	$_SESSION['message'] = array(
-			'text' => 'Your band has been added.',
+			'text' => 'Your team has been added.',
 			'type' => 'success'
 	);
 	
 	// Redirect to list of bands
-	header('Location:../?p=list_bands');
+	header('Location:../?p=list_teams');
 
 } else {
 	// Store submitted date into a session data
@@ -30,10 +30,10 @@ if( $_POST['band_name'] != '' &&
 	
 	// Store error message in session data
 	$_SESSION['message'] = array(
-			'text' => 'Your band has been added.',
+			'text' => 'Your team has been added.',
 			'type' => 'success'
 	);
 	
 	// Redirect to the form
-	header('Location:../?p=form_add_bands');
+	header('Location:../?p=form_add_team');
 }
